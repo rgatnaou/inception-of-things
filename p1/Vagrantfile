@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bookworm64"
+  config.vm.box_version = "12.20250126.1"
+
+  config.vm.define "rgatnaouS" do |server|
+    server.vm.hostname="rgatnaouS"
+    server.vm.provider "virtualbox" do |vb|
+      vb.name="rgatnaouS"
+      vb.memory=1600
+      vb.cpus=1
+    end 
+    server.vm.network "private_network", ip: "192.168.56.110"
+    server.vm.provision :shell, path: "scripts/server.sh"
+  end
+  
+  config.vm.define "rgatnaouSW" do |worker|
+    worker.vm.hostname="rgatnaouSW"
+    worker.vm.provider "virtualbox" do |vb|
+      vb.name="rgatnaouSW"
+      vb.memory=1600
+      vb.cpus=1
+    end
+    worker.vm.network "private_network", ip: "192.168.56.111"
+    worker.vm.provision :shell, path:  "scripts/worker.sh"
+  end
+
+end

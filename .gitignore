@@ -1,0 +1,6 @@
+*/.vagrant
+# Ignore Vagrant files
+*/config/k3s.yaml
+# Ignore K3s configuration files
+*/config/node-token
+# Ignore K3s node token files

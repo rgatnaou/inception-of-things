@@ -8,10 +8,10 @@ sudo apt install net-tools -y
 
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --node-ip=192.168.56.110 --advertise-address=192.168.56.110 --tls-san 192.168.56.110" sh -
 
-cp /var/lib/rancher/k3s/server/node-token /vagrant/conf
+# cp /var/lib/rancher/k3s/server/node-token /vagrant/conf
 
-cp /etc/rancher/k3s/k3s.yaml /vagrant/conf
+# cp /etc/rancher/k3s/k3s.yaml /vagrant/conf
 
 
-echo "alias k='sudo k3s kubectl'" >> /home/vagrant/.bashrc
-echo 'export PATH=\$PATH:/sbin' >> /home/vagrant/.bashrc
+# echo "alias k='sudo k3s kubectl'" >> /home/vagrant/.bashrc
+# echo 'export PATH=\$PATH:/sbin' >>  /home/vagrant/.bashrc

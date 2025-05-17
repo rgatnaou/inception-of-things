@@ -12,6 +12,5 @@ cp /var/lib/rancher/k3s/server/node-token /vagrant/conf
 
 cp /etc/rancher/k3s/k3s.yaml /vagrant/conf
 
-
 echo "alias k='sudo k3s kubectl'" >> /home/vagrant/.bashrc
-echo 'export PATH=\$PATH:/sbin' >> /home/vagrant/.bashrc
+echo "export PATH=\$PATH:/sbin" >>  /home/vagrant/.bashrc
